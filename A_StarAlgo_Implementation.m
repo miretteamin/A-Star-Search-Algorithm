@@ -87,7 +87,7 @@ function aStarSearch(grid, SrcDest)
                 newG = cell(r, c).g + 1.0;
                 newH = euclideanDist(r - 1, c, SrcDest);
                 newF = newG + newH;
-                if cell(r-1, c).f == 1000 || cell(r-1,c).f > newF
+                if cell(r-1,c).f > newF
                     needsVisiting = [needsVisiting; [newF r-1 c]];
                     cell(r-1, c).f = newF;
                     cell(r-1, c).g = newG;
@@ -107,7 +107,7 @@ function aStarSearch(grid, SrcDest)
                 newG = cell(r, c).g + 1.0;
                 newH = euclideanDist(r+1, c, SrcDest);
                 newF = newG + newH;
-                if cell(r+1, c).f == 1000 || cell(r+1,c).f > newF
+                if cell(r+1,c).f > newF
                     needsVisiting = [needsVisiting; [newF r+1 c]];
                     cell(r+1, c).f = newF;
                     cell(r+1, c).g = newG;
@@ -127,7 +127,7 @@ function aStarSearch(grid, SrcDest)
                 newG = cell(r, c).g + 1.0;
                 newH = euclideanDist(r, c-1, SrcDest);
                 newF = newG + newH;
-                if cell(r, c-1).f == 1000 || cell(r, c-1).f > newF
+                if cell(r, c-1).f > newF
                     needsVisiting = [needsVisiting; [newF r c-1]];
                     cell(r, c-1).f = newF;
                     cell(r, c-1).g = newG;
@@ -147,7 +147,7 @@ function aStarSearch(grid, SrcDest)
                 newG = cell(r, c).g + 1.0;
                 newH = euclideanDist(r, c+1, SrcDest);
                 newF = newG + newH;
-                if cell(r, c+1).f == 1000 || cell(r, c+1).f > newF
+                if cell(r, c+1).f > newF
                     needsVisiting = [needsVisiting; [newF r c+1]];
                     cell(r, c+1).f = newF;
                     cell(r, c+1).g = newG;
